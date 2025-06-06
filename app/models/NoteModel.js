@@ -21,11 +21,11 @@ export class Note {
 
   get ListTemplate() {
     return `
-    <div role="button" onclick="app.NoteController.setActiveNote('${this.id})" class="fs-5 fw-bold selectable-primary" title="Click to open Thought ${this.title}">
-      <p>${this.title}</p>
-      <p>${this.body}</p>
-      <p>${this.createdAt}</p>
-      <p>${this.updatedAt}</p>
+    <div role="button" onclick="app.NoteController.setActiveNote('${this.id})" class="selectable-primary" title="Click to open Thought ${this.title}">
+        <p class="fs-3 fw-bold">${this.title}</p>
+        <p class="fs-5">${this.body}</p>
+        <p class="fs-7">${this.createdAt}</p>
+        <p class="fs-7">${this.updatedAt}</p>
     </div>
     `
   }
