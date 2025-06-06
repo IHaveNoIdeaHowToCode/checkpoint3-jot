@@ -22,8 +22,35 @@
     </nav>
   </header>
 
-  <main>
+  <main class="container-fluid">
+    <!-- SECTION NOTE CREATION FORM -->
+    <section class="border mb-5">
+      <div class="row">
+        <div class="col-md-4">
+          <form class="m-2" id="note-form" onsubmit="app.NoteController.createNewNote()">
+            <h5>Jot a Thought</h5>
+            <div class="mb-3">
+              <!-- <label for="note-title">Note Title</label> -->
+              <input id="note-title" type="text" placeholder="Thought Title..." name="title" required minlength="3"
+                maxlength="15">
+            </div>
+            <div class="mb-3">
+              <label for="note-color">Thought Color</label>
+              <input id="note-color" class="form-control-color" type="color" value="#FF0000" required>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-outline-dark m-2" type="reset">Reset</button>
+              <button class="btn btn-success m-2" type="submit">Create Thought</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
+    <!-- SECTION NOTES LIST -->
+    <section id="note-list" class="row border">
+      NOTE LIST GOES HERE
+    </section>
 
   </main>
 
@@ -43,7 +70,7 @@
   <!-- !SECTION -->
   <!-- The start of our javascript -->
   <script src="app/App.js" type="module"></script>
-  
+
 </body>
 
 </html>

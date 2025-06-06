@@ -13,7 +13,6 @@ class ObservableAppState extends EventEmitter {
     new Note({ title: 'Homework', body: 'Finish math assignment', color: '#90EE90' }),
     new Note({ title: 'Ideas', body: 'Start a blog about coding', color: '#ADD8E6' })
   ]
-
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

@@ -19,4 +19,15 @@ export class Note {
     return this.createdAt.toLocaleDateString()
   }
 
+  get ListTemplate() {
+    return `
+    <div role="button" onclick="app.NoteController.setActiveNote('${this.id})" class="fs-5 fw-bold selectable-primary" title="Click to open Thought ${this.title}">
+      <p>${this.title}</p>
+      <p>${this.body}</p>
+      <p>${this.createdAt}</p>
+      <p>${this.updatedAt}</p>
+    </div>
+    `
+  }
+
 }

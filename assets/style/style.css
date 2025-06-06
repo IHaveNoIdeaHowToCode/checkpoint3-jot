@@ -7,9 +7,9 @@ body {
 
 main {
   flex-grow: 1;
-  display: flex;
+  /* display: flex;
   place-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #pop-toast-container {
@@ -17,4 +17,9 @@ main {
   flex-direction: column;
   justify-content: start;
   align-items: end;
+}
+
+.form-control-color {
+  border-radius: 0;
+  padding: 0.5rem;
 }
