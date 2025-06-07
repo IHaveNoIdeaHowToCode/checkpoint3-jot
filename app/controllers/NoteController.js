@@ -1,7 +1,10 @@
 import { AppState } from "../AppState.js";
 import { Note } from "../models/NoteModel.js";
+import { noteService } from "../services/NoteService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { setHTML } from "../utils/Writer.js";
+
+
 
 
 export class NoteController {
@@ -18,4 +21,22 @@ export class NoteController {
     Notes.forEach(Note => noteContent += Note.ListTemplate)
     setHTML('note-list', noteContent)
   }
+
+  drawActiveNote() {
+    console.log("Drawing Active Note!");
+    const activeNote = AppState.activeNote
+    setHTML('active-note', activeNote.activeNoteTemplate)
+  }
+
+  setActiveNote(NoteId) {
+    console.log("Setting active Note", NoteId);
+    noteService.setActiveNote(NoteId)
+    this.drawActiveNote()
+  }
+
+  // drawActiveNote() {
+
+  // }
+
+
 }

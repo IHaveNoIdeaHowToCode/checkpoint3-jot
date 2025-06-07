@@ -8,6 +8,8 @@ class ObservableAppState extends EventEmitter {
   // /**@type {import('./models/Example.js').Example[]} */
   // examples = []
 
+  activeNote = null
+
   Notes = [
     new Note({ title: 'Grocery List', body: 'Eggs, Milk, Bread', color: '#FFD700' }),
     new Note({ title: 'Homework', body: 'Finish math assignment', color: '#90EE90' }),
