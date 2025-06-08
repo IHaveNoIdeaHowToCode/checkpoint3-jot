@@ -36,7 +36,7 @@ export class Note {
 
   get activeNoteTemplate() {
     return `
-    <section style="background-color: ${this.color}; padding: 8px;">
+    <div style="height: 64px; background-color: ${this.color}; border-radius: 4px 4px 0 0;"></div>
       <form id="active-form" class="row">
         <h1>${this.title}</h1>
         <div>${this.createdAtDateFormat}</div>
@@ -49,7 +49,6 @@ export class Note {
           <button type="button"  class="btn btn-teal">Save</button>
         </div>
       </form>
-    </section>
     `
   }
 }
