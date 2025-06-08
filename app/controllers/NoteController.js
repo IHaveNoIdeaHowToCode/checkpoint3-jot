@@ -11,7 +11,8 @@ export class NoteController {
   constructor() {
     console.log("Notes Controller is here!");
     console.table(AppState.Notes)
-    // AppState.on('Notes', this.drawNotesList)
+    AppState.on('Notes', this.drawNotesList)
+    AppState.on('activeNote', this.drawActiveNote)
     this.drawNotesList()
   }
 
@@ -41,6 +42,7 @@ export class NoteController {
     const FormData = getFormData(form)
     console.log('creating Note', FormData);
     noteService.createNote(FormData)
+    // this.drawNotesList()
   }
 
   // drawActiveNote() {

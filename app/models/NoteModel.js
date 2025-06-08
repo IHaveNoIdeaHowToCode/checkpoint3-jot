@@ -10,7 +10,7 @@ export class Note {
     this.id = generateId();
     this.title = data.title;
     this.color = data.color;
-    this.body = data.body;
+    this.body = data.body || 'Start jotting your thoughts here';
     this.createdAt = data.createdAt ? new Date(data.createdAt) : new Date()
     this.updatedAt = data.updatedAt ? new Date(data.updatedAt) : new Date()
   }
