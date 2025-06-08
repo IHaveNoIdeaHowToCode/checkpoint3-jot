@@ -34,6 +34,15 @@ export class NoteController {
     this.drawActiveNote()
   }
 
+  createNewNote() {
+    event.preventDefault()
+    const form = event.target
+    console.log('🎯', form);
+    const FormData = getFormData(form)
+    console.log('creating Note', FormData);
+    noteService.createNote(FormData)
+  }
+
   // drawActiveNote() {
 
   // }

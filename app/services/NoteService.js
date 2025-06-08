@@ -6,6 +6,15 @@ import { Note } from "../models/NoteModel.js";
 class NoteService {
 
 
+  createNote(FormData) {
+    console.log('Service has grabbed', FormData);
+    const newNote = new Note(FormData)
+    AppState.Notes.push(newNote)
+    console.log('📝', AppState.Notes);
+    AppState.activeNote = newNote
+  }
+
+
 
   setActiveNote(NoteId) {
     const selectedNote = AppState.Notes.find((Note) => Note.id === NoteId)
