@@ -21,6 +21,8 @@ export class NoteController {
     let noteContent = ''
     Notes.forEach(Note => noteContent += Note.ListTemplate)
     setHTML('note-list', noteContent)
+    let count = Notes.length;
+    document.getElementById('note-count').innerText = `Total Thoughts: ${count}`;
   }
 
   drawActiveNote() {
