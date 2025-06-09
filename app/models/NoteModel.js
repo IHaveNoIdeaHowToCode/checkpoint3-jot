@@ -36,9 +36,9 @@ export class Note {
 
   get activeNoteTemplate() {
     return `
-    <div style="height: 64px; background-color: ${this.color}; border-radius: 4px 4px 0 0;"></div>
       <form id="active-form" class="row">
-        <h1>${this.title}</h1>
+      <h1>${this.title}</h1>
+      <div style="height: 64px; background-color: ${this.color}; border-radius: 4px 4px 0 0;"></div>
         <div>${this.createdAtDateFormat}</div>
         <div>${this.updatedAtDateFormat}</div>
 
@@ -46,7 +46,7 @@ export class Note {
 
         <div class="d-flex justify-content-end my-2 gap-2">
           <button type="button" class="btn btn-danger">Delete</button>
-          <button type="button"  class="btn btn-teal">Save</button>
+          <button type="button" onclick="app.NoteController.saveActiveNote()" class="btn btn-teal">Save</button>
         </div>
       </form>
     `

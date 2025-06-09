@@ -14,6 +14,7 @@ export class NoteController {
     AppState.on('Notes', this.drawNotesList)
     AppState.on('activeNote', this.drawActiveNote)
     this.drawNotesList()
+    // noteService.loadNotes()
   }
 
   drawNotesList() {
@@ -50,9 +51,9 @@ export class NoteController {
   saveActiveNote() {
     console.log('This is a saved ActiveNote!');
     const form = document.getElementById('active-note')
-    const FormData = getFormData(form)
-    console.log('Saved', FormData);
-    caseFilesService.saveActiveNote(formData.body)
+    const formData = getFormData(form)
+    console.log('Saved', formData);
+    noteService.saveActiveNote(formData.body)
   }
 
   // drawActiveNote() {

@@ -15,9 +15,8 @@ class NoteService {
     AppState.Notes.push(newNote)
     console.log('📝', AppState.Notes);
     AppState.activeNote = newNote
+    this.saveActiveNote()
   }
-
-
 
   setActiveNote(NoteId) {
     const selectedNote = AppState.Notes.find((Note) => Note.id === NoteId)
@@ -28,10 +27,10 @@ class NoteService {
 
   saveActiveNote(newBody) {
     AppState.activeNote.body = newBody
-    this.saveActiveNote(`note`)
+    this.saveNotes()
   }
 
-  saveActiveNote() {
+  saveNotes() {
     saveState('notes', AppState.Notes)
   }
 
@@ -40,6 +39,8 @@ class NoteService {
     console.log('Loading Notes', noteList);
     AppState.Notes = noteList
   }
+
+
 }
 
 export const noteService = new NoteService()
