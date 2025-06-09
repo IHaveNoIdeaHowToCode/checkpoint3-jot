@@ -6,7 +6,6 @@ import { generateId } from "../utils/GenerateId.js";
 export class Note {
   constructor(data) {
     console.log('📝 is here!');
-
     this.id = generateId();
     this.title = data.title;
     this.color = data.color;
@@ -16,11 +15,11 @@ export class Note {
   }
 
   get createdAtDateFormat() {
-    return this.createdAt.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', })
+    return this.createdAt.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', hour: "numeric", minute: 'numeric' })
   }
 
   get updatedAtDateFormat() {
-    return this.updatedAt.toLocaleDateString('en-US', { hour: 'numeric', minute: 'numeric', month: 'long', day: '2-digit', year: 'numeric', })
+    return this.updatedAt.toLocaleDateString('en-US', { hour: 'numeric', minute: 'numeric', month: 'long', day: '2-digit', year: 'numeric', second: 'numeric' })
   }
 
   get ListTemplate() {

@@ -15,18 +15,22 @@ class NoteService {
     AppState.Notes.push(newNote)
     console.log('📝', AppState.Notes);
     AppState.activeNote = newNote
-    this.saveActiveNote()
+    // REVIEW test this!
+    // this.saveActiveNote()
   }
 
   setActiveNote(NoteId) {
     const selectedNote = AppState.Notes.find((Note) => Note.id === NoteId)
     console.log("This is the selected Note info:", NoteId, selectedNote);
-    selectedNote.updatedAt = new Date()
+    // REVIEW don't change the updated at on setting active
     AppState.activeNote = selectedNote
   }
 
   saveActiveNote(newBody) {
     AppState.activeNote.body = newBody
+    // REVIEW do change the updated at on saving
+    AppState.activeNote.updatedAt = new Date()
+    // REVIEW make sure to redraw after this
     this.saveNotes()
   }
 

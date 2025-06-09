@@ -14,7 +14,7 @@ export class NoteController {
     AppState.on('Notes', this.drawNotesList)
     AppState.on('activeNote', this.drawActiveNote)
     this.drawNotesList()
-    // noteService.loadNotes()
+    noteService.loadNotes()
   }
 
   drawNotesList() {
@@ -36,6 +36,7 @@ export class NoteController {
     console.log("Setting active Note", NoteId);
     noteService.setActiveNote(NoteId)
     this.drawActiveNote()
+    this.saveActiveNote()
   }
 
   createNewNote() {
@@ -45,6 +46,7 @@ export class NoteController {
     const FormData = getFormData(form)
     console.log('creating Note', FormData);
     noteService.createNote(FormData)
+    this.saveActiveNote()
     // this.drawNotesList()
   }
 
@@ -54,6 +56,8 @@ export class NoteController {
     const formData = getFormData(form)
     console.log('Saved', formData);
     noteService.saveActiveNote(formData.body)
+    this.drawActiveNote()
+    this.drawNotesList()
   }
 
   confirmNoteDelete(noteId) {
