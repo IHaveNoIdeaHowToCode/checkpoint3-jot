@@ -47,6 +47,14 @@ export class NoteController {
     // this.drawNotesList()
   }
 
+  saveActiveNote() {
+    console.log('This is a saved ActiveNote!');
+    const form = document.getElementById('active-note')
+    const FormData = getFormData(form)
+    console.log('Saved', FormData);
+    caseFilesService.saveActiveNote(formData.body)
+  }
+
   // drawActiveNote() {
 
   // }
