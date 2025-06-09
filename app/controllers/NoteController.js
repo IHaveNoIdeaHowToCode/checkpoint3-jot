@@ -56,6 +56,16 @@ export class NoteController {
     noteService.saveActiveNote(formData.body)
   }
 
+  confirmNoteDelete(noteId) {
+    const confirmed = window.confirm('Are you sure you want to delete this Thought?')
+
+    if (!confirmed) { return }
+
+    console.log('deleting note with the ID of ' + noteId);
+    noteService.deleteNote(noteId)
+
+  }
+
   // drawActiveNote() {
 
   // }

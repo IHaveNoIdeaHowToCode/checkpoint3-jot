@@ -45,7 +45,7 @@ export class Note {
         <textarea name="body" class="col-12 form-control" rows="24">${this.body}</textarea>
 
         <div class="d-flex justify-content-end my-2 gap-2">
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" onclick="app.NoteController.confirmNoteDelete('${this.id}')" class="btn btn-danger">Delete</button>
           <button type="button" onclick="app.NoteController.saveActiveNote()" class="btn btn-teal">Save</button>
         </div>
       </form>

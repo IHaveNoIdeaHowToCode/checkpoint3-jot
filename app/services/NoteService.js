@@ -35,11 +35,23 @@ class NoteService {
   }
 
   loadNotes() {
-    const noteList = loadState('notes', [Note])
-    console.log('Loading Notes', noteList);
-    AppState.Notes = noteList
+    const noteListFromLocalStorage = loadState('notes', [Note])
+    if (noteListFromLocalStorage.length == 0) {
+      AppState.Notes = AppState.Notes
+    }
+    else {
+      AppState.Notes = noteListFromLocalStorage
+    }
   }
 
+
+  deleteNote(noteId) {
+    const notes = AppState.Notes
+    const noteIndex = notes.findIndex(note => note.id == noteId)
+    console.log('Index to remove at is ' + noteIndex);
+    notes.splice(noteIndex, 1)
+    this.saveNotes()
+  }
 
 }
 
